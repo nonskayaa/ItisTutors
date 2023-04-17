@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+      <h5 style="margin-right: auto;" class="my-0 mr-md-auto font-weight-normal">itis TUTORS</h5>
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a style="text-decoration: none;" class="p-2 text-dark" href="forum">Форум</a>
+        <a style="text-decoration: none;" class="p-2 text-dark" href="storage">Хранилище</a>
+        <a style="text-decoration: none;" class="p-2 text-dark" href="tutorsAbout">О тьюторах</a>
+        <a style="text-decoration: none;" class="p-2 text-dark" href="MyProfile">Профиль</a>
+      </nav>
+      <a class="btn btn-outline-primary" href="{% url 'logout' %}">Выйти</a>
+    </div>
+    {% block content %}{% endblock %}
+</body>
+</html>
