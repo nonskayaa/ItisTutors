@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'tutors',
+    'docker',
     'users.apps.UsersConfig',
     'crispy_forms'
 ]
