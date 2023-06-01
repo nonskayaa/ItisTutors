@@ -3,11 +3,12 @@
 {% block content %}
     {% for TutorInfo in TutorInfos %}
         <article class="media content-section">
-          <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
+          <img class="rounded-circle article-img" src="{{ TutorInfo.profile.image.url }}">
           <div class="media-body">
-              <h2 class="article" >{{ TutorInfo.name }}</h2>
+              <h1 class="article" >{{ TutorInfo.name }}</h1>
+              <h4 class="article">{{TutorInfo.discipline.title}}</h4>
               <p class="article-content">{{ TutorInfo.contacts }}</p>
-              <a class ="btn btn-outline-info mb-1 mr-4" href="?TutorInfo.id">Подробнее</a>
+              <a class ="btn btn-outline-info mb-1 mr-4" href="{% url 'TutorDetail' TutorInfo.id %}">Подробнее</a>
           </div>
         </article>
     {% endfor %}

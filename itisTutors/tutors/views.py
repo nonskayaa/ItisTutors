@@ -19,13 +19,13 @@ class TutorInfoListView(ListView):
     model = TutorInfo
     template_name = 'tutors/list.html'
     context_object_name = 'TutorInfos'
-    paginate_by = 5
+    paginate_by = 3
 
 class TutorUserView(ListView):
     model = TutorInfo
-    template_name = 'user_TutorInfos.html'
+    template_name = 'TutorDetail.html'
     context_object_name = 'TutorInfos'
-    paginate_by = 5
+    #paginate_by = 5
 
     def get_queryset(self):
         user = get_object_or_404(User, username=self.kwargs.get('username'))

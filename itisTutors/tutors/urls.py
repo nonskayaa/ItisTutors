@@ -25,6 +25,8 @@ from .views import (
 
 urlpatterns = [
     path('', TutorInfoListView.as_view(), name='list'),
-    path('user/<str:username>', TutorUserView.as_view(), name='user'),
-    path('post/<int:pk>/', TutorInfoDetailView.as_view(), name='TutorInfo_detail'),
+    #path('user/<str:username>', TutorUserView.as_view(), name='user'),#post/<int:pk>/
+    path('<int:id>/', TutorUserView.as_view(), name='TutorDetail'),
+
+
 ]
