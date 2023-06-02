@@ -19,14 +19,14 @@ from django.urls import path, include
 
 from .views import (
     TutorInfoListView,
-    TutorUserView,
+    TutorDetailView,
     TutorInfoDetailView
 )
 
 urlpatterns = [
     path('', TutorInfoListView.as_view(), name='list'),
     #path('user/<str:username>', TutorUserView.as_view(), name='user'),#post/<int:pk>/
-    path('<int:id>/', TutorUserView.as_view(), name='TutorDetail'),
+    path('<int:pk>/', TutorInfoDetailView.as_view(), name='TutorDetail'),
 
 
 ]

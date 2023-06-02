@@ -21,10 +21,10 @@ class TutorInfoListView(ListView):
     context_object_name = 'TutorInfos'
     paginate_by = 3
 
-class TutorUserView(ListView):
+class TutorDetailView(ListView):
     model = TutorInfo
-    template_name = 'TutorDetail.html'
-    context_object_name = 'TutorInfos'
+    template_name = 'tutorinfo_detail.html'
+    context_object_name = 'TutorInfo'
     #paginate_by = 5
 
     def get_queryset(self):

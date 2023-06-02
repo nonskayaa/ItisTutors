@@ -2,12 +2,12 @@
 {% extends "tutors/base2.html" %}
 {% block content %}
   <article class="media content-section">
-    <img class="rounded-circle article-img" src="{{ TutorInfo.user.image.url }}">
+    <img class="rounded-circle article-img" src="{{ object.profile.image.url }}">
     <div class="media-body">
       <div class="article-metadata">
-        <a class="mr-2" href="{% url 'user' object.user.name %}">{{ object.user.name }}</a>
-        <p>{{ object.user.discipline.title }}</p>
-        <small class="text-muted">{{ object.user.course }}</small>
+        <a class="mr-2" >{{ object.profile.user.username }}</a>
+        <p>{{ object.profile.discipline.title }}</p>
+        <small class="text-muted">{{ object.profile.course }}</small>
       </div>
       <p class="article-content">{{ object.contacts }}</p>
     </div>
