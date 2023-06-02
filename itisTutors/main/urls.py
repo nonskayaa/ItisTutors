@@ -6,6 +6,6 @@ urlpatterns = [
     path('forum', views.forum),
     path('storage', views.storage),
     path('tutors/', include('tutors.urls')),
-    path('MyProfile', views.MyProfile, name="profile"),
+    path('profile', views.MyProfile, name="profile"),
     path('signup', views.SignUp.as_view(), name="signup"),
 ]
