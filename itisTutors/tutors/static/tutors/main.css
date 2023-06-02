@@ -4,6 +4,39 @@ html {
  height:100%
 }
 
+body {
+  margin:0px;
+  padding:0px;
+  background: #fafafa;
+  color: #333333;
+  margin-top: 0rem;
+  font-family:Roboto;
+  position: relative;
+  left: 0px
+}
+
+.detail-info{
+  margin:8px;
+  padding:8px;
+  background: #fafafa;
+  color: #333333;
+  margin-top: 0rem;
+  font-family:Roboto;
+  position: relative;
+  left: 50px
+}
+
+.detail-mininfo{
+  margin:8px;
+  padding:8px;
+  background: #fafafa;
+  color: #333333;
+  margin-top: 0rem;
+  font-family:Roboto;
+  position: relative;
+  left: 20px
+}
+
 h1, h2, h3, h4, h5, h6 {
   color: #444444;
 }
@@ -50,9 +83,19 @@ a.article-title:hover {
 }
 
 .article-img {
-  height: 65px;
-  width: 65px;
-  margin-right: 16px;
+  height: 390px;
+  width: 390px;
+  margin-right: 40px;
+  position: relative;
+  left: 150px
+}
+
+.article-minimg {
+  height: 150px;
+  width: 150px;
+  margin-right: 40px;
+  position: relative;
+  left: 50px
 }
 
 .article-metadata {

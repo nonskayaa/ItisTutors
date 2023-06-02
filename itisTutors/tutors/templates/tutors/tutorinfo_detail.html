@@ -4,13 +4,14 @@
 {% block content %}
   <article class="media content-section">
     <img class="rounded-circle article-img" src="{{object.profile.image.url}}"/>
-    <div class="media-body">
+    <div class="detail-info">
       <div class="article-metadata">
-        <a class="mr-2" >{{ object.profile.user.username }}</a>
-        <p>{{ object.profile.discipline.title }}</p>
-        <small class="text-muted">{{ object.profile.course }}</small>
+        <h1 class="mr-2" >    {{object.name}}  ({{ object.profile.user.username }})</h1>
+        <h5>{{ object.profile.course }}</h5>
+        <p><small></small></p>
+        <h2>{{ object.discipline.title}}</h2>
       </div>
-      <p class="article-content">{{ object.contacts }}</p>
+      <h4 class="article-content">{{ object.contacts }}</h4>
     </div>
   </article>
 {% endblock content %}
