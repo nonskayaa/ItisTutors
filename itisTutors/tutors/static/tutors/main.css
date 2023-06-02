@@ -27,15 +27,22 @@ body {
 }
 
 .detail-mininfo{
-  margin:8px;
+  margin:0px;
   padding:8px;
   background: #fafafa;
   color: #333333;
   margin-top: 0rem;
   font-family:Roboto;
   position: relative;
-  left: 20px
+  left: 20px;
+
 }
+
+dashboarder{
+    outline-offset: 3px;
+    outline: 5px dashed blue
+}
+
 
 h1, h2, h3, h4, h5, h6 {
   color: #444444;
@@ -67,6 +74,9 @@ ul {
   border: 1px solid #dddddd;
   border-radius: 3px;
   margin-bottom: 20px;
+  outline-offset: 0px;
+    outline: 3px solid #32a1ce;
+  outline-style: inset;
 }
 
 .article-title {
@@ -95,7 +105,8 @@ a.article-title:hover {
   width: 150px;
   margin-right: 40px;
   position: relative;
-  left: 50px
+  z-index: 1;
+  left: 0px
 }
 
 .article-metadata {

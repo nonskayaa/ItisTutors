@@ -3,7 +3,7 @@
 {% block content %}
     {% for TutorInfo in TutorInfos %}
         <article class="media content-section">
-          <img class="rounded-circle article-minimg" src="{{ TutorInfo.profile.image.url }}">
+          <img class="rounded-circle article-minimg" src="{{ TutorInfo.profile.image.url }}" align="left">
           <div class="detail-mininfo">
               <h1 class="article" >{{ TutorInfo.name }}</h1>
               <h4 class="article-content">{{TutorInfo.discipline.title}}</h4>
