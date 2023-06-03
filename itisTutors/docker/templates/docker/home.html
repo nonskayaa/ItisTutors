@@ -1,21 +1,15 @@
-<!DOCTYPE html>
 {% extends "tutors/base2.html" %}
 {% block content %}
-    {% for TutorInfo in TutorInfos %}
+    {% for subject in subjects %}
         <article class="media content-section">
-          <img class="rounded-circle article-minimg" src="{{ TutorInfo.profile.image.url }}" align="left">
-          <div class="detail-mininfo">
-              <h1 class="article" >{{ TutorInfo.name }}</h1>
-              <h4 class="article-content"><a href="{% url 'subject-posts' TutorInfo.discipline.id %}">{{TutorInfo.discipline.title}}</a></h4>
-              <a class ="btn btn-outline-info mb-1 mr-4" href="{% url 'TutorDetail' TutorInfo.id %}">Подробнее</a>
-          </div>
+                <h1><a class="mr-2"  href="{% url 'subject-posts' subject.id %}">{{ subject.title }}</a></h1>
         </article>
     {% endfor %}
-    <div class="pagination justify-content-center">
+    <div class="pagination justify-content-center"> 
     {% if is_paginated %}
 
       {% if page_obj.has_previous %}
-
+        
         <a class="btn btn-outline-info mb-4 mr-1" href="?page=1">Первая</a>
         <a class="btn btn-outline-info mb-4 mr-1" href="?page={{ page_obj.previous_page_number }}">Предыдущая</a>
       {% endif %}

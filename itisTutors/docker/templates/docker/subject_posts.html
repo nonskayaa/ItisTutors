@@ -1,21 +1,33 @@
-<!DOCTYPE html>
-{% extends "tutors/base2.html" %}
+{% extends "tutors/base3.html" %}
 {% block content %}
-    {% for TutorInfo in TutorInfos %}
-        <article class="media content-section">
-          <img class="rounded-circle article-minimg" src="{{ TutorInfo.profile.image.url }}" align="left">
+    {% if posts %}
+        <h1 class="mb-3">Записи по предмету {{ posts.0.discipline.title }} ({{ page_obj.paginator.count }})</h1>
+    {% else %}
+        <h1 class="mb-3">Нет записей по этому предмету</h1>
+    {% endif %}
+    {%if user.Profile.tutorPermissions%}
+    <article class="media content-section">
           <div class="detail-mininfo">
-              <h1 class="article" >{{ TutorInfo.name }}</h1>
-              <h4 class="article-content"><a href="{% url 'subject-posts' TutorInfo.discipline.id %}">{{TutorInfo.discipline.title}}</a></h4>
-              <a class ="btn btn-outline-info mb-1 mr-4" href="{% url 'TutorDetail' TutorInfo.id %}">Подробнее</a>
+            <div class="article-metadata">
+                <a class="btn btn-outline-info mb-4 mr-1" href="../new/">Создать новую запись</a>
+            </div>
+          </div>
+        </article>
+    {%endif%}
+    {% for post in posts %}
+        <article class="media content-section">
+          <div class="detail-mininfo">
+            <div class="article-metadata">
+              <h1><a class="mr-2" href="{% url 'post-detail' post.pk %}">{{ post.title }}</a></h1>
+              <h3><small class="text-muted">{{ post.course.title }}</small></h3>
+            </div>
           </div>
         </article>
     {% endfor %}
-    <div class="pagination justify-content-center">
+    <div class="pagination justify-content-center"> 
     {% if is_paginated %}
 
       {% if page_obj.has_previous %}
-
         <a class="btn btn-outline-info mb-4 mr-1" href="?page=1">Первая</a>
         <a class="btn btn-outline-info mb-4 mr-1" href="?page={{ page_obj.previous_page_number }}">Предыдущая</a>
       {% endif %}

@@ -29,7 +29,7 @@ class TutorDetailView(ListView):
 
     def get_queryset(self):
         user = get_object_or_404(User, username=self.kwargs.get('username'))
-        return TutorInfo.user
+        return TutorInfo.objects
 
 
 class TutorInfoDetailView(DetailView):

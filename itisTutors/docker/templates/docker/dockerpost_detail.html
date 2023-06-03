@@ -1,0 +1,20 @@
+{% extends "tutors/base3.html" %}
+{% block content %}
+  <article class="media content-section">
+    <div class="media-body">
+      <div class="article-metadata">
+        <h1 class="mr-2">{{ object.title }}</h1>
+        <h3><small class="text-muted" ><a class="blacktext" href="{% url 'subject-posts' object.discipline.id %}">{{object.discipline.title}}</a> {{ object.course }}</small></h3>
+
+        {% if user.Profile.tutorPermissions %}
+          <div>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' object.id %}">Редактировать</a>
+            <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' object.id %}">Удалить</a>
+          </div>
+        {% endif %}
+      </div>
+      <h2 class="article-title">Ссылки:</h2>
+      <p class="article-content"><big>{{ object.postText }}</big></p>
+    </div>
+  </article>
+{% endblock content %}

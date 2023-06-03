@@ -1,4 +1,4 @@
-{% extends "main/base.html" %}
+{% extends "tutors/base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
     <div class="content-section">
@@ -6,7 +6,7 @@
             {% csrf_token %}
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Вход</legend>
-                {{ form|crispy }}
+                {{ form }}
             </fieldset>
             <div class="form-group">
                 <button class="btn btn-outline-info" type="submit">Войти</button>
