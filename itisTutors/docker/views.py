@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
+from django.urls import reverse_lazy
 from django.views.generic import (
     ListView,
     DetailView,
@@ -56,25 +57,25 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = DockerPost
     fields = ['title', 'postText']
-
+    success_url = reverse_lazy('storage-home')
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
 
     def test_func(self):
         post = self.get_object()
-        if self.request.user.profile.tutorPermissions==True:
+        if self.request.user.Profile.tutorPermissions==True:
             return True
         return False
 
 
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = DockerPost
-    success_url = '/'
+    success_url =  reverse_lazy('storage-home')
 
     def test_func(self):
         post = self.get_object()
-        if self.request.user.profile.tutorPermissions==True:
+        if self.request.user.Profile.tutorPermissions==True:
             return True
         return False
 

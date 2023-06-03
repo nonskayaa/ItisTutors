@@ -1,11 +1,12 @@
-{% extends "tutors/base2.html" %}
+{% extends "tutors/base3.html" %}
 {% block content %}
   <article class="media content-section">
     <div class="media-body">
       <div class="article-metadata">
-        <a class="mr-2" href="{% url 'subject-posts' object.discipline.id %}">{{ object.discipline.title }}</a>
-        <small class="text-muted">{{ object.course }}</small>
-        {% if user.tutorPermissions=true %}
+        <a class="mr-2" href="{% url 'subject-posts' object.discipline.id %}"><h1>{{ object.title }}</h1></a>
+        <h3><small class="text-muted">{{object.discipline.title}} {{ object.course }}</small></h3>
+
+        {% if user.Profile.tutorPermissions %}
           <div>
             <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' object.id %}">Редактировать</a>
             <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' object.id %}">Удалить</a>
@@ -13,7 +14,7 @@
         {% endif %}
       </div>
       <h2 class="article-title">Ссылки:</h2>
-      <p class="article-content">{{ object.postText }}</p>
+      <p class="article-content"><big>{{ object.postText }}</big></p>
     </div>
   </article>
 {% endblock content %}

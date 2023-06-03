@@ -1,11 +1,15 @@
 {% extends "tutors/base3.html" %}
 {% block content %}
-    <h1 class="mb-3">Записи по предмету {{ view.kwargs.title }} ({{ page_obj.paginator.count }})</h1>
+    {% if posts %}
+        <h1 class="mb-3">Записи по предмету {{ posts.0.discipline.title }} ({{ page_obj.paginator.count }})</h1>
+    {% else %}
+        <h1 class="mb-3">Нет записей по этому предмету</h1>
+    {% endif %}
     {% for post in posts %}
         <article class="media content-section">
           <div class="detail-mininfo">
             <div class="article-metadata">
-              <a class="mr-2" href="{% url 'post-detail' post.pk %}">{{ post.discipline.title }}</a>
+              <a class="mr-2" href="{% url 'post-detail' post.pk %}">{{ post.title }}</a>
               <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
             </div>
             <h2 class="article-content">{{ post.postText }}</h2>

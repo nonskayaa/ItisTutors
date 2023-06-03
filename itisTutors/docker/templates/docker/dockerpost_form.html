@@ -1,4 +1,4 @@
-{% extends "tutors/base2.html" %}
+{% extends "tutors/base4.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
     <div class="content-section">
@@ -6,7 +6,8 @@
             {% csrf_token %}
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Новая запись</legend>
-                {{ form }}
+                <h1>{{ form.title }}</h1>
+                <p>{{ form.postText}}</p>
             </fieldset>
             <div class="form-group">
                 <button class="btn btn-outline-info" type="submit">Сохранить</button>
