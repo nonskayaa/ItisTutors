@@ -2,11 +2,7 @@
 {% block content %}
     {% for subject in subjects %}
         <article class="media content-section">
-          <div class="media-body">
-            <div class="article-metadata">
-                <a class="mr-2"  href="{% url 'subject-posts' subject.id %}"><h1>{{ subject.title }}</h1>></a>
-            </div>
-          </div>
+                <h1><a class="mr-2"  href="{% url 'subject-posts' subject.id %}">{{ subject.title }}</a></h1>
         </article>
     {% endfor %}
     <div class="pagination justify-content-center"> 

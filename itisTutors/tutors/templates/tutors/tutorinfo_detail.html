@@ -9,7 +9,7 @@
         <h1 class="mr-2" >    {{object.name}}  ({{ object.profile.user.username }})</h1>
         <h5>{{ object.profile.course }}</h5>
         <p><small></small></p>
-        <h2>{{ object.discipline.title}}</h2>
+        <h2><a href="{% url 'subject-posts' object.discipline.id %}">{{ object.discipline.title}}</a></h2>
       </div>
       <h4 class="article-content">{{ object.contacts }}</h4>
     </div>

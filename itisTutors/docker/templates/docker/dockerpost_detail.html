@@ -3,8 +3,8 @@
   <article class="media content-section">
     <div class="media-body">
       <div class="article-metadata">
-        <a class="mr-2" href="{% url 'subject-posts' object.discipline.id %}"><h1>{{ object.title }}</h1></a>
-        <h3><small class="text-muted">{{object.discipline.title}} {{ object.course }}</small></h3>
+        <h1 class="mr-2">{{ object.title }}</h1>
+        <h3><small class="text-muted" ><a class="blacktext" href="{% url 'subject-posts' object.discipline.id %}">{{object.discipline.title}}</a> {{ object.course }}</small></h3>
 
         {% if user.Profile.tutorPermissions %}
           <div>

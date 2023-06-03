@@ -18,10 +18,9 @@
         <article class="media content-section">
           <div class="detail-mininfo">
             <div class="article-metadata">
-              <a class="mr-2" href="{% url 'post-detail' post.pk %}">{{ post.title }}</a>
-              <small class="text-muted">{{ post.course.title }}</small>
+              <h1><a class="mr-2" href="{% url 'post-detail' post.pk %}">{{ post.title }}</a></h1>
+              <h3><small class="text-muted">{{ post.course.title }}</small></h3>
             </div>
-            <h2 class="article-content">{{ post.postText }}</h2>
           </div>
         </article>
     {% endfor %}

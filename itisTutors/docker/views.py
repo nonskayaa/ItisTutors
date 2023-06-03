@@ -50,7 +50,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     fields = ['title', 'postText','discipline','course']
     success_url = reverse_lazy('storage-home')
     def form_valid(self, form):
-        #form.instance.author = self.request.user
+        form.instance.discipline = self.request.subject
         return super().form_valid(form)
 
 
