@@ -13,8 +13,15 @@
           {% csrf_token %}
           <fieldset class="form-group">
               <legend class="border-bottom mb-4">Ваш профиль</legend>
-              {{ u_form }}
-              {{ p_form }}
+              <h3>Имя: {{ u_form.username }}</h3>
+              <h3>Почта: {{ u_form.email }}</h3>
+              <h4>Курс: {{ p_form.course }}</h4>
+              <h5>{{ p_form.image }}</h5>
+              {%if user.Profile.tutorPermissions%}
+                <h3>Вы тьютор!</h3>
+              {%else%}
+                <h3>Инициатива {{p_form.initiative}}</h3>
+              {%endif%}
           </fieldset>
           <div class="form-group">
               <button class="btn btn-outline-info" type="submit">Обновить</button>
