@@ -47,8 +47,8 @@ class PostDetailView(DetailView):
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = DockerPost
-    fields = ['title', 'postText','subject','course']
-
+    fields = ['title', 'postText','discipline','course']
+    success_url = reverse_lazy('storage-home')
     def form_valid(self, form):
         #form.instance.author = self.request.user
         return super().form_valid(form)

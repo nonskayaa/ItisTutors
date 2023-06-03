@@ -5,12 +5,21 @@
     {% else %}
         <h1 class="mb-3">Нет записей по этому предмету</h1>
     {% endif %}
+    {%if user.Profile.tutorPermissions%}
+    <article class="media content-section">
+          <div class="detail-mininfo">
+            <div class="article-metadata">
+                <a class="btn btn-outline-info mb-4 mr-1" href="../new/">Создать новую запись</a>
+            </div>
+          </div>
+        </article>
+    {%endif%}
     {% for post in posts %}
         <article class="media content-section">
           <div class="detail-mininfo">
             <div class="article-metadata">
               <a class="mr-2" href="{% url 'post-detail' post.pk %}">{{ post.title }}</a>
-              <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+              <small class="text-muted">{{ post.course.title }}</small>
             </div>
             <h2 class="article-content">{{ post.postText }}</h2>
           </div>
