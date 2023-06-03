@@ -6,7 +6,7 @@ from django.contrib import auth
 urlpatterns = [
     path('', views.index, name="index"),
     path('forum', views.forum),
-    path('storage', views.storage),
+    path('storage', include('docker.urls')),
     path('tutors/', include('tutors.urls')),
     path('profile', users_views.profile, name="profile"),#views.MyProfile
     path('signup',users_views.register , name="signup"),#views.SignUp.as_view()
